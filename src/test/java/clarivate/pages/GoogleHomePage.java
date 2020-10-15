@@ -35,7 +35,6 @@ public class GoogleHomePage {
 	
 	public void setAndSearchGivenText(String strSearchString) {
 		driver.getCurrentUrl();
-//		textbox_Search.sendKeys(strSearchString);
 		textbox_Search.sendKeys(strSearchString,Keys.ENTER);
 	}
 	
@@ -43,7 +42,6 @@ public class GoogleHomePage {
 		return link_FirstResult.getAttribute("href");
 	}
 	
-//	@SuppressWarnings("deprecation")
 	public void clickOnButtonSearch() {
 		button_GoogleSearch.click();
 		WebDriverWait wait = new WebDriverWait(driver,30);

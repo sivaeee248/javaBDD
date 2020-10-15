@@ -12,21 +12,16 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		
-features = "C:/Users/UC209277/eclipse-workspace/Cucumber_Clarivate/src/test/java/clarivate/featurefiles",
-glue= "clarivate/stepdefinition",
-plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}, 
-monochrome = true
-)
+
+		features = "C:/Users/UC209277/eclipse-workspace/Cucumber_Clarivate/src/test/java/clarivate/featurefiles",
+		glue = "clarivate/stepdefinition",
+		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" },
+		monochrome = true)
 
 public class TestRunner {
-//	String WorkingDir = System.getProperty("user.dir");
 	@AfterClass
-    public static void writeExtentReport() {
-        Reporter.loadXMLConfig(new File("config/report.xml"));
-    }
-	
-	
-	
+	public static void writeExtentReport() {
+		Reporter.loadXMLConfig(new File("config/report.xml"));
+	}
 
 }
