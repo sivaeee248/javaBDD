@@ -12,7 +12,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BasePage {
 	
 	public WebDriver driver;
-	Properties properties;
+	public Properties properties;
+	
+	public BasePage() {
+		this.properties = getConfigProperties("config.properties");
+	}
 	
 	/**
      * This method is to load the given property file
@@ -21,13 +25,13 @@ public class BasePage {
      */
 	
 	public Properties getConfigProperties(String propertyFilePath) {
-		properties = new Properties();
+		Properties props = new Properties();
 		FileInputStream inputStream;
         try{
             inputStream = new FileInputStream(propertyFilePath);
-            properties.load(inputStream);
+            props.load(inputStream);
         } catch (IOException e) { e.printStackTrace(); }
-        return properties;
+        return props;
 	}
 	
 	/**
@@ -45,11 +49,12 @@ public class BasePage {
 			driver = new FirefoxDriver();
 		}
 		else if(browserName.trim().equalsIgnoreCase("CHROME")) {
-			System.setProperty("webdriver.chrome.driver", WorkingDir+"\\chromedriver.exe.exe");
+			System.setProperty("webdriver.chrome.driver", WorkingDir+"\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 		driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt(getConfigProperties("config.properties").getProperty("implicit_wait_timeout")),TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Integer.parseInt(properties.getProperty("implicit_wait_timeout")),TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(Integer.parseInt(getConfigProperties("config.properties").getProperty("implicit_wait_timeout")),TimeUnit.SECONDS);
         return driver;
 	}
 
