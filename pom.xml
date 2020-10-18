@@ -65,6 +65,12 @@
 		<artifactId>selenium-java</artifactId>
 		<version>3.9.1</version>
 	</dependency>
+	
+	<dependency>
+        <groupId>com.github.2gis.winium</groupId>
+        <artifactId>winium-webdriver</artifactId>
+        <version>0.1.0-1</version>
+    </dependency>
 
 	<dependency>
 		<groupId>com.vimalselvam</groupId>
