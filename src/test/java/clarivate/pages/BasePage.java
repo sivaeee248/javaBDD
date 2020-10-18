@@ -65,5 +65,15 @@ public class BasePage {
 				TimeUnit.SECONDS);
 		return driver;
 	}
+	
+	
+	/**
+	 * This method is to close the driver instance
+	 * 
+	 */
+
+	public void closeDriver() {
+		driver.quit();
+	}
 
 }

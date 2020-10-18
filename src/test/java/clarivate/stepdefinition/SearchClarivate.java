@@ -16,27 +16,33 @@ import cucumber.api.java.en.When;
 
 
 public class SearchClarivate extends BasePage {
-	@Given("Open Browser$")
+	@Given("user Opens Browser$")
 	public void open_Browser() throws Throwable {
 		driver = launchDriver(properties.getProperty("browser"));
 	}
 
-	@When("^Navigate to Google$")
-	public void Navigate_to_Google() throws Throwable {
-		driver.get(properties.getProperty("App_url"));
+	@When("^user is on \"([^\"]*)\" homepage$")
+	public void Navigate_to_AppURL(String appURL) throws Throwable {
+//		driver.get(properties.getProperty("App_url"));
+		driver.get(appURL);
 	}
 
-	@And("^Search given String \"([^\"]*)\"$")
-	public void search_given_string(String SearchTerm) throws Throwable {
+	@Then("^user enters \"([^\"]*)\" in searchbox$")
+	public void user_enters_in_searchbox(String SearchTerm) throws Throwable {
 		GoogleHomePage googlePage = new GoogleHomePage(driver);
 		googlePage.setAndSearchGivenText(SearchTerm);
 	}
 
-	@Then("Validate search Result \"([^\"]*)\"")
+	@Then("The first search result should be \"([^\"]*)\"")
 	public void validate_search_result(String strExpectedURL) throws Throwable {
 		GoogleHomePage googlePage = new GoogleHomePage(driver);
 		String url = googlePage.getFirstResultURL();
-		Assert.assertEquals("Validate First Search Result", strExpectedURL, url);
+		Assert.assertEquals("validation First Search Result", strExpectedURL, url);
+	}
+	
+	@And("Close browser")
+	public void close_Borwser() throws Throwable {
+		closeDriver();
 	}
 
 }
