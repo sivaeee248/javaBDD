@@ -5,4 +5,3 @@ Scenario: Automation task 2 - Validate Calculator to perform Square Root of 6557
     When  Enter given number 65575
     Then Click on square root button
     Then Calculated result should be correct
-#    And Close Calculator Application
