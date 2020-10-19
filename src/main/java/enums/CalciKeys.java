@@ -2,7 +2,7 @@ package enums;
 /**
  * This is a enum to handle Windows 7 Calculator keys and their Automation IDs
  *
- * @author Amritansh Diwakar
+ * @author Siva Kumar
  */
 public enum CalciKeys {
     NUM0("num0Button"),

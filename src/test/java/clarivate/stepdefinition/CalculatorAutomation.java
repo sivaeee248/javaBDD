@@ -12,6 +12,12 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import enums.CalciKeys;
 
+/**
+ * This is a Steps definition class for Windows Calculator functionality
+ *
+ * @author Siva Kumar
+ */
+
 public class CalculatorAutomation extends BaseWindows{
 	
 	 private WindowsCalculator windowsCalculator;

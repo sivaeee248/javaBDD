@@ -6,6 +6,12 @@ import java.net.URL;
 import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 
+/**
+ * This is a Base Class consisting of common methods related to launch driver etc
+ *
+ * @author Siva Kumar
+ */
+
 public class BaseWindows {
 	
 	public WiniumDriver winiumDriver;
@@ -29,6 +35,7 @@ public class BaseWindows {
 	 */
 
 	public void closeDriver() {
+		winiumDriver.findElementById("Close").click();
 		winiumDriver.quit();
 	}
 

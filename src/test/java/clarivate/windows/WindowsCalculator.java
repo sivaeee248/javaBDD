@@ -2,8 +2,13 @@ package clarivate.windows;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.winium.WiniumDriver;
-
 import enums.CalciKeys;
+
+/**
+ * This is a common methods class calculator operations
+ *
+ * @author Siva Kumar
+ */
 
 public class WindowsCalculator {
 	

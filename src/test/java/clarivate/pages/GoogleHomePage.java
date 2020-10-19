@@ -12,6 +12,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.gson.annotations.Until;
 
 
+/**
+ * This is a Page object Model class page for Google Page of common methods
+ *
+ * @author Siva Kumar
+ */
+
 public class GoogleHomePage {
 	
 	public WebDriver driver;
